@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cecilia Adzo Molga - Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        #header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .profile-picture {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-text {
+            text-align: left;
+            max-width: 600px;
+        }
+
+        #header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        #header .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        #header .description {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+
+        .contact-badge {
+            background: rgba(255,255,255,0.15);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-icons {
+            margin: 25px 0;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.6rem;
+            margin: 0 12px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Main Content */
+        #main {
+            padding: 80px 0;
+        }
+
+        .section {
+            margin: 80px 0;
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            gap: 50px;
+            margin: 50px 0;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 40px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .feature.left {
+            flex-direction: row;
+        }
+
+        .feature.right {
+            flex-direction: row-reverse;
+        }
+
+        .feature-icon {
+            font-size: 4.5rem;
+            color: #667eea;
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature h3 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .feature p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f3f4;
+            font-size: 1.05rem;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .skill-category li:before {
+            content: "▸";
+            color: #667eea;
+            margin-right: 12px;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+
+        /* Experience */
+        .experience-item {
+            background: white;
+            padding: 40px;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-left: 5px solid #667eea;
+        }
+
+        .experience-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .experience-item .company {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .experience-paragraph {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .experience-paragraph p {
+            margin-bottom: 20px;
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .education-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .education-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .education-item .institution {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .project-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        .project-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-tools {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 12px 18px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            border-left: 4px solid #667eea;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 80px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+
+        .cta h3 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+            position: relative;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            position: relative;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 35px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        #footer {
+            background: #2c3e50;
+            color: white;
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .footer-content > p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            background: rgba(255,255,255,0.12);
+        }
+
+        .form-group textarea {
+            height: 140px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #667eea;
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            
+            .profile-text {
+                text-align: center;
+            }
+            
+            .profile-picture {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .feature {
+                flex-direction: column !important;
+                text-align: center;
+                gap: 25px;
+            }
+            
+            .feature-icon {
+                width: 100px;
+                height: 100px;
+                font-size: 3.5rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-badge {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            #header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #header {
+                padding: 60px 20px;
+            }
+            
+            .profile-picture {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .feature {
+                padding: 30px 20px;
+            }
+            
+            .skill-category, .experience-item, .project-card {
+                padding: 25px 20px;
+            }
+            
+            .cta {
+                padding: 60px 20px;
+            }
+            
+            .cta h3 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-picture">
+                    <img src="photo_profil.jpg" alt="Cecilia Adzo Molga">
+                </div>
+                <div class="profile-text">
+                    <h1>Cecilia Adzo Molga</h1>
+                    <p class="tagline">Data Analyst | Medical Laboratory Scientist</p>
+                    <p class="description">Transforming healthcare data into actionable insights through scientific precision and advanced analytics. Combining laboratory expertise with data storytelling to drive informed decisions.</p>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <span class="contact-badge">📧 ceciliamolga@gmail.com</span>
+                <span class="contact-badge">📱 +233 (0) 559 432 014</span>
+                <span class="contact-badge">📍 Accra, Ghana</span>
+            </div>
+            
+            <div class="social-icons">
+                <a href="http://www.linkedin.com/in/cecilia-molga" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/ceciliaAM-canon" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:ceciliamolga@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main">
+        <div class="container">
+            <!-- Mission Statement -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>Bridging Healthcare Expertise with Data Analytics</h2>
+                    <p>I combine scientific precision from medical laboratory science with modern data analytics to uncover patterns, solve complex problems, and tell compelling stories that drive positive outcomes.</p>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section class="section">
+                <div class="features">
+                    <div class="feature left">
+                        <div class="feature-icon">
+                            <i class="fas fa-dna"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Healthcare & Laboratory Expertise</h3>
+                            <p>With extensive experience in medical laboratory science, I bring unparalleled precision, accuracy, and data integrity to every analysis. Having performed complex diagnostic procedures including GeneXpert PCR testing, hematological analyses, and biochemical tests, I understand the critical importance of reliable data in healthcare decision-making and patient outcomes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature right">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Technical Data Analytics</h3>
+                            <p>Proficient in Python, SQL, Power BI, Tableau, and Excel for comprehensive data collection, cleaning, analysis, and visualization. Through the Generation Ghana Data Analytics Bootcamp, I've enhanced my technical capabilities and collaborated on real-world projects, developing robust solutions that transform raw data into actionable business intelligence.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature left">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Data Storytelling & Visualization</h3>
+                            <p>I don't just analyze numbers—I uncover the narratives hidden within data. My unique transition from laboratory science to analytics combines scientific discipline with creative communication, enabling me to present complex information in engaging, accessible ways that resonate with both technical and non-technical stakeholders, driving informed strategic decisions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>Technical & Professional Skills</h2>
+                    <p>A comprehensive skill set combining technical expertise with healthcare domain knowledge</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Data Analytics & Tools</h3>
+                        <ul>
+                            <li>Python Programming & Data Analysis</li>
+                            <li>SQL Database Management & Querying</li>
+                            <li>Power BI Dashboard Development</li>
+                            <li>Tableau Data Visualization</li>
+                            <li>Advanced Excel & Power Query</li>
+                            <li>Statistical Analysis & Modeling</li>
+                            <li>Data Cleaning & Preprocessing</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Healthcare Analytics</h3>
+                        <ul>
+                            <li>Laboratory Data Management</li>
+                            <li>Patient Data Analysis & Trends</li>
+                            <li>Disease Surveillance & Monitoring</li>
+                            <li>Medical Statistics & Epidemiology</li>
+                            <li>Quality Control & Assurance</li>
+                            <li>GeneXpert PCR Data Interpretation</li>
+                            <li>Healthcare Workflow Optimization</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Professional Competencies</h3>
+                        <ul>
+                            <li>Data Storytelling & Communication</li>
+                            <li>Cross-functional Team Collaboration</li>
+                            <li>Problem Solving & Critical Thinking</li>
+                            <li>Attention to Detail & Accuracy</li>
+                            <li>Project Management & Planning</li>
+                            <li>Stakeholder Engagement</li>
+                            <li>Continuous Learning & Adaptation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>Professional Experience</h2>
+                    <p>Combining healthcare expertise with data analytics across diverse professional roles</p>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Data Analyst Bootcamp Graduate</h3>
+                    <p class="company">Generation Ghana</p>
+                    <div class="experience-paragraph">
+                        <p>During my intensive data analytics training with Generation Ghana, I developed comprehensive skills in data visualization, analysis, and storytelling. I designed and presented detailed data visualizations using Tableau and Power BI, creating dashboards that enabled data-driven decision making for various stakeholders.</p>
+                        <p>I executed complete data analysis projects from initial data collection through to final interpretation, utilizing tools including Excel, SQL, and Python. This hands-on experience allowed me to master data cleaning techniques and develop robust analytical methodologies. Through collaborative group projects, I strengthened my teamwork and communication abilities while solving complex data challenges.</p>
+                        <p>My training culminated in successfully presenting complex data insights to diverse audiences, translating technical findings into actionable business recommendations that demonstrated the practical value of data analytics in real-world scenarios.</p>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Medical Laboratory Scientist</h3>
+                    <p class="company">LEKMA Hospital, Teshie</p>
+                    <div class="experience-paragraph">
+                        <p>As a Medical Laboratory Scientist at LEKMA Hospital, I developed a strong foundation in precision, accuracy, and data integrity through hands-on diagnostic work. I performed comprehensive manual and automated culturing of diverse biological samples including blood, urine, stool, HVS, and urethral specimens, ensuring accurate results for patient diagnosis and treatment.</p>
+                        <p>My responsibilities included conducting precise biochemical tests following Clinical Laboratory Standardized Institute guidelines and executing detailed hematological procedures such as malaria parasite identification, sickle cell testing, complete blood counts, and erythrocyte sedimentation rates. I gained specialized expertise in utilizing advanced GeneXpert PCR technology for accurate MTB diagnosis and rifampicin resistance detection, contributing to effective tuberculosis management.</p>
+                        <p>Additionally, I managed critical blood banking procedures including ABO and Rh blood grouping and cross-matching for safe transfusions. This experience instilled in me the importance of meticulous data recording, quality control, and the critical role that reliable laboratory data plays in healthcare decision-making and patient outcomes.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>Education & Certifications</h2>
+                    <p>Formal education and specialized training that form the foundation of my expertise</p>
+                </div>
+                <div class="education-grid">
+                    <div class="education-item">
+                        <h3>Medical Laboratory Science</h3>
+                        <p class="institution">Accra Technical University</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Data Analysis Certification</h3>
+                        <p class="institution">Generation Ghana</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Content Creation & Design with AI</h3>
+                        <p class="institution">Skill Set Africa</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>Portfolio Projects</h2>
+                    <p>Practical applications of data analytics in healthcare and business contexts</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Healthcare Analytics Dashboard</h3>
+                        <p>Comprehensive interactive dashboard monitoring disease trends, laboratory efficiency metrics, and resource allocation across Ghanaian healthcare facilities.</p>
+                        <div class="project-tools">
+                            <strong>Technologies:</strong> Python, Power BI, SQL, Data Visualization Libraries
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Laboratory Efficiency Analysis</h3>
+                        <p>In-depth analysis of laboratory workflow optimization, turnaround time reduction, and resource allocation strategies.</p>
+                        <div class="project-tools">
+                            <strong>Technologies:</strong> Excel, Tableau, Statistical Analysis, Process Mapping
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Disease Surveillance System</h3>
+                        <p>Advanced real-time monitoring and alert system for infectious diseases utilizing laboratory test data and geographical mapping.</p>
+                        <div class="project-tools">
+                            <strong>Technologies:</strong> Python, Folium, GIS Mapping, Data Visualization
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="section">
+                <div class="cta">
+                    <h3>Ready to Transform Your Data into Actionable Insights?</h3>
+                    <p>Whether you're dealing with healthcare data, business metrics, or community-focused initiatives, I'm passionate about leveraging data analytics to uncover meaningful patterns, solve complex challenges, and drive positive, measurable outcomes.</p>
+                    <a href="#footer" class="cta-button">Start a Conversation</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h2>Let's Collaborate on Your Next Data Project</h2>
+                <p>I'm actively seeking new opportunities and meaningful collaborations where I can apply my unique combination of healthcare expertise and data analytics skills. Reach out to discuss how we can work together to transform your data challenges into strategic advantages.</p>
+                
+                <div class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Project or Opportunity Type">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell me about your data challenges or project requirements..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="http://www.linkedin.com/in/cecilia-molga" target="_blank" title="Connect on LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/ceciliaAM-canon" target="_blank" title="View my GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:ceciliamolga@gmail.com" title="Send me an email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2024 Cecilia Adzo Molga. All rights reserved. | Combining Scientific Precision with Data Intelligence</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
