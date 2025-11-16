@@ -327,14 +327,35 @@
 
         .project-card {
             background: white;
-            padding: 35px 30px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
+            overflow: hidden;
         }
 
         .project-card:hover {
             transform: translateY(-8px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 25px;
         }
 
         .project-card h3 {
@@ -357,6 +378,22 @@
             margin-top: 20px;
             font-size: 0.95rem;
             border-left: 4px solid #667eea;
+        }
+
+        .project-download {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .project-download:hover {
+            background: #5a6fd8;
         }
 
         /* CTA */
@@ -769,24 +806,63 @@
                 </div>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <h3>Healthcare Analytics Dashboard</h3>
-                        <p>Comprehensive interactive dashboard monitoring disease trends, laboratory efficiency metrics, and resource allocation across Ghanaian healthcare facilities.</p>
-                        <div class="project-tools">
-                            <strong>Technologies:</strong> Python, Power BI, SQL, Data Visualization Libraries
+                        <div class="project-image">
+                            <img src="Medlab.png" alt="MedLab Project">
+                        </div>
+                        <div class="project-content">
+                            <h3>MedLab Analytics Dashboard</h3>
+                            <p>Comprehensive interactive dashboard monitoring disease trends, laboratory efficiency metrics, and resource allocation across Ghanaian healthcare facilities.</p>
+                            <div class="project-tools">
+                                <strong>Technologies:</strong> Python, Power BI, SQL, Data Visualization Libraries
+                            </div>
+                            <a href="Medlab.pdf" class="project-download" download>
+                                <i class="fas fa-download"></i> Download Project PDF
+                            </a>
                         </div>
                     </div>
                     <div class="project-card">
-                        <h3>Laboratory Efficiency Analysis</h3>
-                        <p>In-depth analysis of laboratory workflow optimization, turnaround time reduction, and resource allocation strategies.</p>
-                        <div class="project-tools">
-                            <strong>Technologies:</strong> Excel, Tableau, Statistical Analysis, Process Mapping
+                        <div class="project-image">
+                            <img src="Medi-Health.jpg" alt="Medi-Health Sales Analysis">
+                        </div>
+                        <div class="project-content">
+                            <h3>Medi-Health Sales Analysis</h3>
+                            <p>In-depth analysis of pharmaceutical sales data, identifying trends, seasonal patterns, and opportunities for revenue optimization.</p>
+                            <div class="project-tools">
+                                <strong>Technologies:</strong> Excel, Tableau, Statistical Analysis, Process Mapping
+                            </div>
+                            <a href="Medi-Health Sales Analysis 1.pdf" class="project-download" download>
+                                <i class="fas fa-download"></i> Download Project PDF
+                            </a>
                         </div>
                     </div>
                     <div class="project-card">
-                        <h3>Disease Surveillance System</h3>
-                        <p>Advanced real-time monitoring and alert system for infectious diseases utilizing laboratory test data and geographical mapping.</p>
-                        <div class="project-tools">
-                            <strong>Technologies:</strong> Python, Folium, GIS Mapping, Data Visualization
+                        <div class="project-image">
+                            <img src="SpeedHaul.jpg" alt="SpeedHaul Logistics">
+                        </div>
+                        <div class="project-content">
+                            <h3>SpeedHaul Logistics Optimization</h3>
+                            <p>Analysis of logistics operations to optimize delivery routes, reduce fuel consumption, and improve overall supply chain efficiency.</p>
+                            <div class="project-tools">
+                                <strong>Technologies:</strong> Python, Folium, GIS Mapping, Data Visualization
+                            </div>
+                            <a href="SpeedHaul-1.pdf" class="project-download" download>
+                                <i class="fas fa-download"></i> Download Project PDF
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="Streamflix.png" alt="Streamflix Analysis">
+                        </div>
+                        <div class="project-content">
+                            <h3>Streamflix Content Analysis</h3>
+                            <p>Analysis of streaming platform content performance, viewer preferences, and content recommendation optimization.</p>
+                            <div class="project-tools">
+                                <strong>Technologies:</strong> Python, SQL, Data Visualization, Machine Learning
+                            </div>
+                            <a href="STREAMFLIX 1.pdf" class="project-download" download>
+                                <i class="fas fa-download"></i> Download Project PDF
+                            </a>
                         </div>
                     </div>
                 </div>
